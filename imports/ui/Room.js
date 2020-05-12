@@ -94,10 +94,6 @@ const Room = ({loading, joined, myName, room}) => {
     }
   }
 
-  const joinExtraUser = () => {
-    Meteor.call('rooms.join', {id: room._id, name: "myName"+Math.random()});
-  }
-
   if(!joined) {
     Meteor.call('rooms.join', {id: room._id, name: myName})
 
@@ -140,7 +136,6 @@ const Room = ({loading, joined, myName, room}) => {
                 )}
             </CSSTransitionGroup>
           </div>
-          <Button onClick={joinExtraUser}>Join</Button>
         </MainContent>
       </AntiMargin>
     </Container>
